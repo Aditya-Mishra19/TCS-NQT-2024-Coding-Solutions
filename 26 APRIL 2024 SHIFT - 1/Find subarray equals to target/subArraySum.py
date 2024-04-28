@@ -18,8 +18,8 @@ def optimalApp (arr, n, target):
             print(arr[startIndex : i ])
         sumMap[curSum] = i 
 
-arr = [3, 4, -7, 1, 3, 3, 1, -4]
+arr = list(map(int, input().split())) # 3 4 -7 1 3 3 1 -4
 N = len(arr)
-target = 7 
+target = int(input())
 # bruteFroce(arr, N, target)
 optimalApp(arr, N, target)
