@@ -15,7 +15,7 @@ def optimalApp (arr, n, target):
             print(arr[:i+1])
         if curSum - target in sumMap:
             startIndex = sumMap[curSum - target]+1
-            print(arr[startIndex : i ])
+            print(arr[startIndex : i+1])
         sumMap[curSum] = i 
 
 arr = list(map(int, input().split())) # 3 4 -7 1 3 3 1 -4
