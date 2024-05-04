@@ -10,7 +10,7 @@ vector<int> input_array_format() {
     stringstream ss(input);
     char c;
     while (ss >> c) {
-        if (isdigit(c)) {
+        if (c != ',' || c != '[' or c != ']') {
             int num;
             ss >> num;
             arr.push_back(num);
