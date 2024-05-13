@@ -1,12 +1,19 @@
-def printAllCombinations(arr):
-    for i in range(len(arr)):
-        for j in range(i + 1):
-            print(*arr[j:i + 1], end="")
-            if i < len(arr) - 1 or j < i:
-                print(",", end="")
+def main():
+    in_str = input()
+    arr = in_str.split(" ")
+    n = int(arr[0])
+    sb = "".join(arr[1:])
     
+    for i in range(n):
+        for j in range(i, n):
+            for q in range(i, j + 1):
+                if q != j:
+                    print(sb[q], end=" ")
+                else:
+                    print(sb[q], end="")
+            if i != n - 1:
+                print(",", end="")
+    print()
 
-s = input("Enter space-separated numbers: ")
-l = s.split()
-N = l[0]
-printAllCombinations(l[1:])
+if __name__ == "__main__":
+    main()
