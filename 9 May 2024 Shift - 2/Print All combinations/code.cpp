@@ -1,25 +1,32 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-void printAllCombinations(vector<string> arr) {
-    for (int i = 0; i < arr.size(); ++i) {
-        for (int j = 0; j <= i; ++j) {
-            cout << arr[j];
-            if (i < arr.size() - 1 || j < i) {
-                cout << ",";
-            }
-        }
-    }
-    cout << endl;
-}
+#include <iostream>
+#include <sstream>
+#include <vector>
 
 int main() {
-    string s;
-    cout << "Enter space-separated numbers: ";
-    getline(cin, s);
-    istringstream iss(s);
-    vector<string> l{istream_iterator<string>{iss}, istream_iterator<string>{}};
-    printAllCombinations(vector<string>(l.begin() + 1, l.end()));
+    std::string input;
+    std::getline(std::cin, input);
+    std::istringstream iss(input);
+    
+    int n;
+    iss >> n;
+    
+    std::vector<int> arr;
+    int temp;
+    while (iss >> temp) {
+        arr.push_back(temp);
+    }
+    
+    for (int i = 0; i < n; ++i) {
+        for (int j = i; j < n; ++j) {
+            for (int q = i; q <= j; ++q) {
+                std::cout << arr[q];
+                if (q != j)
+                    std::cout << " ";
+            }
+            if (i != n - 1)
+                std::cout << ",";
+        }
+    }
+
     return 0;
 }
