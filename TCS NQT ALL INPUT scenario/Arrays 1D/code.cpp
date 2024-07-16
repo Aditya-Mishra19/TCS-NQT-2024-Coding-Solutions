@@ -36,13 +36,11 @@ vector<int> input_comma_separated() {
     string input;
     getline(cin, input);
     stringstream ss(input);
+    int num;
     char c;
-    while (ss >> c) {
-        if (isdigit(c)) {
-            int num;
-            ss >> num;
-            arr.push_back(num);
-        }
+    while (ss >> num) {
+        arr.push_back(num);
+        ss >> c;  // Skip the comma
     }
     return arr;
 }
